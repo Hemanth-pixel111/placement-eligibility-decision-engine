@@ -66,10 +66,12 @@ public class Main {
             );
         }
 
-        Job selectedJob = jobs[0];
+        int selectedJobNumber = scanner.nextInt();
+        Job selectedJob = jobs[selectedJobNumber - 1];
 
         EligibilityChecker checker = new EligibilityChecker();
 
+        System.out.println();
         System.out.println("================================");
         System.out.println("PLACEMENT ELIGIBILITY RESULT");
         System.out.println("================================");
