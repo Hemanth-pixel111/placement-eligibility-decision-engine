@@ -11,11 +11,19 @@ public class Main {
         int backlogs = scanner.nextInt();
         int graduationYear = scanner.nextInt();
 
+        int skillCount = scanner.nextInt();
+        String[] skills = new String[skillCount];
+
+        for (int i = 0; i < skillCount; i++) {
+            skills[i] = scanner.next();
+        }
+
         Candidate candidate = new Candidate(
                 name,
                 percentage,
                 backlogs,
-                graduationYear
+                graduationYear,
+                skills
         );
 
         Job job = new Job(
@@ -36,7 +44,6 @@ public class Main {
         System.out.println("Candidate : " + candidate.getName());
         System.out.println("Company   : " + job.getCompany());
         System.out.println("Role      : " + job.getRole());
-
         System.out.println();
 
         boolean eligible = checker.evaluate(candidate, job);
