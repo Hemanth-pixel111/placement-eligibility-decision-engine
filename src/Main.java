@@ -26,12 +26,18 @@ public class Main {
                 skills
         );
 
+        String[] requiredSkills = {
+            "Java",
+            "SQL"
+        };
+
         Job job = new Job(
                 "Infosys",
                 "Java Developer",
                 65.0,
                 0,
-                2026
+                2026,
+                requiredSkills
         );
 
         EligibilityChecker checker = new EligibilityChecker();
