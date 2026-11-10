@@ -26,8 +26,10 @@ public class Main {
                 2026
         );
 
+        EligibilityRule percentageRule = new PercentageRule();
+
         boolean percentagePass
-                = candidate.getPercentage() >= job.getMinimumPercentage();
+                = percentageRule.check(candidate, job);
 
         boolean backlogPass
                 = candidate.getBacklogs() <= job.getMaximumBacklogs();
