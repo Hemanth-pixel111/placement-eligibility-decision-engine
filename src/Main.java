@@ -26,19 +26,35 @@ public class Main {
                 skills
         );
 
-        String[] requiredSkills = {
-            "Java",
-            "SQL"
-        };
+        int jobCount = scanner.nextInt();
+        Job[] jobs = new Job[jobCount];
 
-        Job job = new Job(
-                "Infosys",
-                "Java Developer",
-                65.0,
-                0,
-                2026,
-                requiredSkills
-        );
+        for (int i = 0; i < jobCount; i++) {
+            String company = scanner.next();
+            String role = scanner.next();
+            double minimumPercentage = scanner.nextDouble();
+            int maximumBacklogs = scanner.nextInt();
+            int requiredGraduationYear = scanner.nextInt();
+
+            int requiredSkillCount = scanner.nextInt();
+            String[] requiredSkills
+                    = new String[requiredSkillCount];
+
+            for (int j = 0; j < requiredSkillCount; j++) {
+                requiredSkills[j] = scanner.next();
+            }
+
+            jobs[i] = new Job(
+                    company,
+                    role,
+                    minimumPercentage,
+                    maximumBacklogs,
+                    requiredGraduationYear,
+                    requiredSkills
+            );
+        }
+
+        Job selectedJob = jobs[0];
 
         EligibilityChecker checker = new EligibilityChecker();
 
@@ -48,11 +64,11 @@ public class Main {
         System.out.println();
 
         System.out.println("Candidate : " + candidate.getName());
-        System.out.println("Company   : " + job.getCompany());
-        System.out.println("Role      : " + job.getRole());
+        System.out.println("Company   : " + selectedJob.getCompany());
+        System.out.println("Role      : " + selectedJob.getRole());
         System.out.println();
 
-        boolean eligible = checker.evaluate(candidate, job);
+        boolean eligible = checker.evaluate(candidate, selectedJob);
 
         System.out.println();
 
