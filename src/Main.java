@@ -54,6 +54,18 @@ public class Main {
             );
         }
 
+        System.out.println();
+        System.out.println("AVAILABLE JOBS");
+
+        for (int i = 0; i < jobs.length; i++) {
+            System.out.println(
+                    (i + 1) + ". "
+                    + jobs[i].getCompany()
+                    + " - "
+                    + jobs[i].getRole()
+            );
+        }
+
         Job selectedJob = jobs[0];
 
         EligibilityChecker checker = new EligibilityChecker();
