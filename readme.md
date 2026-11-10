@@ -1,6 +1,3 @@
-Create a file named `README.md` in the root folder of your project (`placement-eligibility-decision-engine/`) and paste the following content:
-
-```markdown
 # 🎓 Placement Eligibility Decision Engine
 
 <p align="center">
@@ -203,6 +200,3 @@ git push
 
 ```
 
-```
-
-```
